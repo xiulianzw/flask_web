@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<style>
+
+</style>
+<body>
+    {% from "_formhelpers.html" import render_field %}
+    <div class="content_div">
+        <div>Please enter your movie review?</div>
+        <form method="post" action="/main">
+            <dl>
+                {{ render_field(form.review) }}
+            </dl>
+            <input type="submit" value="commit review" name="submit_btn">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>review classification</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"/>
+</head>
+<body>
+    <h3>Your movie review:</h3>
+    <div>{{ review }}</div>
+
+    <h3>Prediction:</h3>
+    <div>
+        This move reivew is <strong>{{ label }}</strong>
+        (probability:{{ probability }}%).
+    </div>
+    <div>
+        <form action="/tanks" method="post">
+            <input type="submit" value="Correct" name="feedback_btn" />
+            <input type="submit" value="Incorrect" name="feedback_btn" />
+            <input type="hidden" value="{{review}}" name="review"/>
+            <input type="hidden" value="{{Y}}" name="Y"/>
+        </form>
+    </div>
+    <div>
+        <form action="/" method="post">
+            <input type="submit" value="submit another review" />
+        </form>
+    </div>
+</body>
+</html>
