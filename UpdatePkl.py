@@ -3,7 +3,7 @@ import sqlite3
 
 import numpy as np
 
-from chapter09.flask_web.vectorizer import vect
+from flask_web.vectorizer import vect
 
 
 #更新模型方法，每次更新10000条评论
